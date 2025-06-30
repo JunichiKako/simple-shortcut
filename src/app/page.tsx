@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import ProjectsTab from '@/components/projects-tab';
+import RunningServersTab from '@/components/running-servers-tab';
 import QuickAccessTab from '@/components/quick-access-tab';
 
 /**
@@ -89,10 +91,10 @@ export default function HomePage() {
         {/* メインコンテンツ */}
         <main className="p-6 px-12 bg-zinc-100">
           <TabsContent value="projects" className="mt-0">
-            このあと作成
+            <ProjectsTab />
           </TabsContent>
           <TabsContent value="running" className="mt-0">
-            このあと作成
+            <RunningServersTab />
           </TabsContent>
           <TabsContent value="quickaccess" className="mt-0">
             <QuickAccessTab />
