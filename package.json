@@ -2,11 +2,20 @@
   "name": "simple-shortcut",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/main.js",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "next:dev": "next dev --turbopack",
+    "next:build": "next build",
+    "next:start": "next start",
+    "lint": "next lint",
+    "electron:build": "tsup",
+    "electron:build:watch": "tsup --watch",
+    "electron:dev": "cross-env NODE_ENV=development nodemon --exec electron dist/main.js",
+    "dev": "npm-run-all --parallel next:dev electron:build:watch electron:dev",
+    "build": "npm-run-all next:build electron:build",
+    "dist": "npm-run-all build && electron-builder --dir",
+    "dist:all": "npm-run-all build && electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
     "@electron-toolkit/utils": "^4.0.0",
