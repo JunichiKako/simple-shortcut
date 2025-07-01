@@ -9,7 +9,7 @@ import { defineConfig } from 'tsup';
 
 export default defineConfig({
   // コンパイル対象ファイル（Electronの2つの主要プロセス）
-  entry: ['./electron/main.ts', './electron/preload.ts'],
+  entry: ['./src/electron/main.ts', './src/electron/preload.ts'],
 
   // ビルド成果物の出力ディレクトリ
   outDir: 'dist',
