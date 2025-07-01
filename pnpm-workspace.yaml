@@ -1,4 +1,6 @@
 onlyBuiltDependencies:
   - '@tailwindcss/oxide'
+  - electron-winstaller
+  - esbuild
   - sharp
   - unrs-resolver
